@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>SciBrowser</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body spellcheck="false">
+  <header id="browser-chrome">
+    <div class="brand">🔬 SciBrowser</div>
+    <div class="nav-controls">
+      <button id="home-btn" title="Home">🏠</button>
+      <input type="text" id="url-input" spellcheck="false" autocomplete="off" placeholder="Enter .sci address (e.g., home.sci)" />
+      <button id="go-btn">Go</button>
+      <button id="upload-nav-btn" class="accent-btn">+ Upload</button>
+    </div>
+  </header>
+
+  <main id="viewport"></main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+
+  <script src="websites.js"></script>
+  <script src="browser.js"></script>
+</body>
+</html>
